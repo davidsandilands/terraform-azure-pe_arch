@@ -4,6 +4,7 @@
 resource "azurerm_virtual_network" "pe" {
  name                = "pe-${var.id}"
  address_space       = ["10.138.0.0/16"]
+ ddos_protection_plan.enable = true
  location            = var.region
  resource_group_name = var.resourcegroup.name
  tags                = var.tags
